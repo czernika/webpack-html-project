@@ -1,0 +1,1 @@
+# Simple webpack configuration for HTML/Pug

@@ -1,7 +1,7 @@
 const { merge } = require('webpack-merge');
 const path = require('path');
 
-const fileName = require('./utilities/filename'); 
+const fileName = require('./utilities/filename');
 
 const rules = require('./rules');
 
@@ -11,8 +11,8 @@ const {
 	entries,
 	webpackConfig,
 	dist,
-} = require('../app.config.js');
-const { root, context, outputDir, clean } = dist; 
+} = require('../app.config');
+const { root, context, outputDir, clean } = dist;
 
 const commonConfig = {
 	entry: entries,
