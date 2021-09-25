@@ -3,8 +3,8 @@ module.exports = {
 	// webpack entry points
 	entries: {
 		app: [
-			'./js/index.js',
-			'./css/style.css',
+			'./js/app.js',
+			'./sass/app.scss',
 		],
 	},
 

@@ -25,8 +25,6 @@ const loader = {
 				postcssOptions: {
 					plugins: isProd ?
 						{
-							// 'webp-in-css/plugin': {},
-							'autoprefixer': {},
 							'css-declaration-sorter': {},
 							'cssnano': { preset: cssnanoPreset },
 						} :

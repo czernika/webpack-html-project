@@ -7,7 +7,7 @@ module.exports = {
 		content: [
 			'app/**/*.html',
 			'app/**/*.pug',
-			'js/**/*.js',
+			'app/js/**/*.js',
 		],
 	},
 
