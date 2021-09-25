@@ -7,10 +7,12 @@ const WebpackAssetsManifest = require('webpack-assets-manifest');
 const WebpackBar = require('webpackbar');
 const CopyPlugin = require('copy-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const fileName = require('../utilities/filename'); 
+const fileName = require('../utilities/filename');
 
-const { htmlConfig, staticFiles, dist } = require('../../app.config');
+const { htmlConfig, staticFiles, dist, linters } = require('../../app.config');
 const { icons } = dist;
 
 let templates = [];
@@ -42,8 +44,6 @@ const plugins = [
 	new WebpackBar(),
 
 	new CopyPlugin(staticFiles),
-
-	
 ];
 
 if ( fs.existsSync(icons.dir) ) {
@@ -52,6 +52,22 @@ if ( fs.existsSync(icons.dir) ) {
 			icons.spriteMap,
 			icons.sprites,
 		)
+	);
+}
+
+if ( linters.js ) {
+	plugins.push(
+		new ESLintPlugin({
+			formatter: 'stylish'
+		}),
+	);
+}
+
+if ( linters.css ) {
+	plugins.push(
+		new StyleLintPlugin({
+			failOnError: false,
+		}),
 	);
 }
 

@@ -40,16 +40,24 @@ module.exports = {
 		},
 		notify: false,
 		files: [
-			'*.html',
+			'app/**/*.html',
+			'app/**/*.pug',
 			'css/**/*.css',
 			'sass/**/*.scss',
 			'js/**/*.js',
 		],
 	},
 
-	// 
+	// @see https://webpack.js.org/configuration/dev-server/
 	devServerConfig: {
 		port: 9000,
+		watchFiles: [
+			'app/**/*.html',
+			'app/**/*.pug',
+			'css/**/*.css',
+			'sass/**/*.scss',
+			'js/**/*.js',
+		],
 	},
 
 	// output configuration
@@ -96,6 +104,12 @@ module.exports = {
 			compressionThreshold: 4, //kb
 			minRatio: 0.8,
 		},
+	},
+
+	// stylelint and eslint
+	linters: {
+		js: true,
+		css: true,
 	},
 
 	// @see https://cssnano.co/docs/optimisations

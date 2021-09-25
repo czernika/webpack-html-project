@@ -4,7 +4,11 @@ module.exports = {
 	darkMode: false,
 
 	purge: {
-		content: [],
+		content: [
+			'app/**/*.html',
+			'app/**/*.pug',
+			'js/**/*.js',
+		],
 	},
 
 	theme: {
