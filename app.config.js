@@ -42,9 +42,6 @@ module.exports = {
 		files: [
 			'app/**/*.html',
 			'app/**/*.pug',
-			'css/**/*.css',
-			'sass/**/*.scss',
-			'js/**/*.js',
 		],
 	},
 
@@ -54,9 +51,6 @@ module.exports = {
 		watchFiles: [
 			'app/**/*.html',
 			'app/**/*.pug',
-			'css/**/*.css',
-			'sass/**/*.scss',
-			'js/**/*.js',
 		],
 	},
 
