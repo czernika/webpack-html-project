@@ -12,10 +12,13 @@ const {
 	webpackConfig,
 	dist,
 } = require('../app.config');
+
 const { root, context, outputDir, clean } = dist;
 
 const commonConfig = {
-	entry: entries,
+	entry: Object.keys(entries).length > 1 ?
+		() => new Promise((resolve) => resolve(entries)) :
+		entries,
 
 	context: path.resolve(root, context),
 

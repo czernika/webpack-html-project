@@ -2,22 +2,38 @@ module.exports = {
 
 	// webpack entry points
 	entries: {
-		app: [
+		common: [
 			'./js/app.js',
 			'./sass/app.scss',
+		],
+
+		index: [
+			'./js/pages/index.js',
+			'./sass/pages/index.scss',
+		],
+
+		about: [
+			'./js/pages/about.js',
+			'./sass/pages/about.scss',
 		],
 	},
 
 	// @see https://github.com/jantimon/html-webpack-plugin#options
 	htmlConfig: {
 		routes: [
-			{ fromTo: 'index.pug' },
-			{ fromTo: 'pages/about.html' },
+			{
+				fromTo: 'index.pug',
+				chunks: ['common', 'index'],
+				publicPath: './',
+			},
+			{
+				fromTo: 'pages/about.html',
+				chunks: ['common', 'about'],
+				publicPath: '../',
+			},
 		],
 
 		inject: true,
-
-		publicPath: './',
 	},
 
 	// @see https://webpack.js.org/plugins/copy-webpack-plugin
