@@ -8,8 +8,8 @@ const servePlugins = require('./plugins/serve');
 const {
 	dist,
 	devServerConfig,
-} = require('../app.config.js');
-const { root, outputDir } = dist; 
+} = require('../app.config');
+const { root, outputDir } = dist;
 
 if (process.env.NODE_ENV === undefined) {
 	process.env.NODE_ENV = 'development';
@@ -22,6 +22,9 @@ const defaultServeConfig = {
 	open: true,
 	compress: true,
 	hot: true,
+	client: {
+		logging: 'error',
+	},
 };
 
 const devServer = { ...defaultServeConfig, ...devServerConfig };
