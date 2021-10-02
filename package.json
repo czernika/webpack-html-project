@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prod": "cross-env NODE_ENV=production webpack --config=build/webpack.prod.js",
-    "dev": "cross-env NODE_ENV=development webpack --config=build/webpack.dev.js",
-    "watch": "cross-env NODE_ENV=development webpack --config=build/webpack.dev.js --watch",
-    "serve": "cross-env NODE_ENV=development webpack serve --config=build/webpack.serve.js"
+    "convert": "node build/pre/image-converter.js",
+    "prod": "npm run convert && cross-env NODE_ENV=production webpack --config=build/webpack.prod.js",
+    "dev": "npm run convert && cross-env NODE_ENV=development webpack --config=build/webpack.dev.js",
+    "watch": "npm run convert && cross-env NODE_ENV=development webpack --config=build/webpack.dev.js --watch",
+    "serve": "npm run convert && cross-env NODE_ENV=development webpack serve --config=build/webpack.serve.js"
   },
   "keywords": [],
   "author": "",

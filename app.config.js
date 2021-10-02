@@ -22,7 +22,7 @@ module.exports = {
 	htmlConfig: {
 		routes: [
 			{
-				fromTo: 'index.pug',
+				fromTo: 'index.html',
 				chunks: ['common', 'index'],
 				publicPath: './',
 			},
@@ -89,7 +89,10 @@ module.exports = {
 		images: {
 			dir: 'img',
 			maxSize: 8, //kb
-			convertToWebp: true,
+			webp: {
+				from: ['app/img/*.{jpeg,jpg,png,gif}'],
+				quality: 85,
+			}
 		},
 
 		// icons

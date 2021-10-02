@@ -42,7 +42,6 @@ This is where custom webpack configurations are. In a future I'll probably creat
 
 ## Todo
 
-- Converted to `.webp` format images must be injected into HTML
 - Make `spritemap.svg` useful
 
 ## Maybe
