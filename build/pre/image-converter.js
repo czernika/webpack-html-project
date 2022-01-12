@@ -9,9 +9,9 @@ const { images, root, context } = dist;
 imagemin(
 	images.webp.from,
 	{
-		destination: path.resolve(root, context, images.dir),
+		destination: path.resolve(root, context, images.webp.to),
 		plugins: [
 			webp( { quality: images.webp.quality } ),
-		]
+		],
 	}
 );

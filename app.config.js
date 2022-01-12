@@ -90,8 +90,11 @@ module.exports = {
 			dir: 'img',
 			maxSize: 8, //kb
 			webp: {
-				from: ['app/img/*.{jpeg,jpg,png,gif}'],
-				quality: 85,
+				from: [
+					'./app/img/**/*.{jpeg,jpg,png,gif}',
+				],
+				to: 'converted', // where all images will be converted to webp
+				quality: 90,
 			}
 		},
 
